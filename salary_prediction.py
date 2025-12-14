@@ -6,8 +6,14 @@ from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
+<<<<<<< HEAD
 # 1. CREATE DATA MANUALY (Instead of CSV)
 
+=======
+# ==========================================
+# 1. CREATE DATA MANUALY (Instead of CSV)
+# ==========================================
+>>>>>>> d51dce27b02897537fba3ddaf1fab093287422f5
 data = {
     'YearsExperience': [1.1, 1.3, 1.5, 2.0, 2.2, 2.9, 3.0, 3.2, 3.2, 3.7,
                         3.9, 4.0, 4.0, 4.1, 4.5, 4.9, 5.1, 5.3, 5.9, 6.0,
@@ -20,14 +26,26 @@ data = {
 # Convert dictionary to DataFrame
 df = pd.DataFrame(data)
 
+<<<<<<< HEAD
 # 2. DATA CLEANING
 
+=======
+# ==========================================
+# 2. DATA CLEANING
+# ==========================================
+>>>>>>> d51dce27b02897537fba3ddaf1fab093287422f5
 # Even with manual data, we include this step to match your project description
 print("Checking for missing values:\n", df.isnull().sum())
 df = df.drop_duplicates()  # Remove duplicate rows if any
 
+<<<<<<< HEAD
 # 3. EDA & VISUALIZATION
 
+=======
+# ==========================================
+# 3. EDA & VISUALIZATION
+# ==========================================
+>>>>>>> d51dce27b02897537fba3ddaf1fab093287422f5
 plt.figure(figsize=(8, 5))
 plt.scatter(df['YearsExperience'], df['Salary'],
             color='blue', label='Data Points')
@@ -37,8 +55,14 @@ plt.ylabel('Salary')
 plt.legend()
 plt.show()
 
+<<<<<<< HEAD
 # 4. SPLIT DATA
 
+=======
+# ==========================================
+# 4. SPLIT DATA
+# ==========================================
+>>>>>>> d51dce27b02897537fba3ddaf1fab093287422f5
 X = df[['YearsExperience']]
 y = df['Salary']
 
@@ -46,8 +70,14 @@ y = df['Salary']
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42)
 
+<<<<<<< HEAD
 # 5. TRAIN MODELS (Linear Regression & Random Forest)
 
+=======
+# ==========================================
+# 5. TRAIN MODELS (Linear Regression & Random Forest)
+# ==========================================
+>>>>>>> d51dce27b02897537fba3ddaf1fab093287422f5
 # Model 1: Linear Regression
 lr_model = LinearRegression()
 lr_model.fit(X_train, y_train)
@@ -58,7 +88,13 @@ rf_model = RandomForestRegressor(n_estimators=100, random_state=42)
 rf_model.fit(X_train, y_train)
 rf_pred = rf_model.predict(X_test)
 
+<<<<<<< HEAD
 # 6. EVALUATION METRICS (MAE, RMSE, R2)
+=======
+# ==========================================
+# 6. EVALUATION METRICS (MAE, RMSE, R2)
+# ==========================================
+>>>>>>> d51dce27b02897537fba3ddaf1fab093287422f5
 
 
 def evaluate(name, y_true, y_pred):
@@ -77,9 +113,16 @@ print("\n=== MODEL PERFORMANCE REPORT ===\n")
 evaluate("Linear Regression", y_test, lr_pred)
 evaluate("Random Forest", y_test, rf_pred)
 
+<<<<<<< HEAD
 # 7. LIVE TEST (Optional)
 # Let's predict salary for someone with 5.5 years exp
 
 
+=======
+# ==========================================
+# 7. LIVE TEST (Optional)
+# ==========================================
+# Let's predict salary for someone with 5.5 years exp
+>>>>>>> d51dce27b02897537fba3ddaf1fab093287422f5
 new_pred = lr_model.predict([[5.5]])
 print(f"Prediction for 5.5 Years Experience: ${new_pred[0]:,.2f}")
